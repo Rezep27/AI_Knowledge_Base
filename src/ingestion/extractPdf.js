@@ -9,6 +9,7 @@ export async function extractPdf(filePath){
     const textResult = await parser.getText();
     const infoResult = await parser.getInfo({ parsePageInfo: true });
 
+
     return {
             text: textResult.text,
             pages: infoResult.total,
