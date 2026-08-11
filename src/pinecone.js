@@ -31,9 +31,11 @@ export async function getIndex() {
 
         // Esperar a que el índice esté listo.
         await waitForIndex(indexName);
-    }
+    }   
 
-    return pinecone.index(indexName);
+    const indexModel = await pinecone.describeIndex(indexName);
+    console.log("Getting pinecone index ...");
+    return pinecone.index({host: indexModel.host});
 }
 
 async function waitForIndex(indexName) {
