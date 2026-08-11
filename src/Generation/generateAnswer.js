@@ -6,8 +6,8 @@ const openai = new OpenAI({
 });
 
 export async function generateAnswer(prompt){
-    const response = await openai.response.create({
-        model: "gpt-4.1-mini",
+    const response = await openai.responses.create({
+        model: "gpt-4o-mini",
         input: prompt
     })
 
