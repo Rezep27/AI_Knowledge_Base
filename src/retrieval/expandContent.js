@@ -1,7 +1,7 @@
 export async function expandContent(index, matches,radius = 1){
     const ids = new Set();
 
-    for (const match of Object.values(matches.records)){
+    for (const match of Object.values(matches)){
 
         const chunkId = match.id;
         const [prefix, number] = match.id.split("-");
@@ -31,7 +31,7 @@ export async function expandContent(index, matches,radius = 1){
 
     const combinedValues = [
         ...neighbors,
-        ...Object.values(matches.records)
+        ...matches
     ]
 
     const unique = new Map();

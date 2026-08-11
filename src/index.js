@@ -3,13 +3,14 @@ import {getIndex} from "./pinecone.js"
 import { expandContent } from "./retrieval/expandContent.js";
 import {Pinecone} from "@pinecone-database/pinecone";
 import {search} from "./retrieval/search.js";
+import { buildPrompt } from "./Generation/prompt.js";
+
 
 let index = await getIndex();
+let question = "How does an Array.map works?"
+let results = await search(index, question, 5);
 
-let results = await search(index, "How does an Array.map works?", 5);
+let expandedResults = await expandContent(index, results);
 
-for (const item of results){
-    console.log(`Score: ${item.score} \nText: ${item.metadata.text}`);
-}
-
+console.log(buildPrompt(question, expandedResults));
 
