@@ -4,7 +4,10 @@
   "description": "This is a repo that contains the backend of an AI Knowledge Base Webapp. This app makes RAG techniques to answer questions about information provided through documentation before hand.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -23,7 +26,10 @@
     "@pinecone-database/pinecone": "^8.2.0",
     "dotenv": "^17.4.2",
     "llamaindex": "^0.12.1",
+    "next": "^15.5.23",
     "openai": "^7.4.0",
-    "pdf-parse": "^2.4.5"
+    "pdf-parse": "^2.4.5",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   }
 }
